@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+/* Change placeholder color for all inputs */
+.input-group input::placeholder,
+.input-group input::-webkit-input-placeholder,
+.input-group input::-moz-placeholder,
+.input-group input:-ms-input-placeholder,
+.input-group input:-moz-placeholder {
+    color: white;
+    opacity: 0.8; /* Adjust opacity if needed */
+}
+
+/* For select dropdown placeholder */
+.input-group select option[value=""] {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed;
+}
+
+.container {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabs {
+    position: relative;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.tab.active {
+    color: #4ecdc4;
+    font-weight: 500;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #4ecdc4;
+    transition: 0.3s;
+}
+
+.form {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.form.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: relative;
+    
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    color: rgb(0, 0, 0);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 15px 40px 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+    color: rgb(30, 29, 29);
+    
+    
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row .input-group {
+    flex: 1;
+    color: rgb(0, 0, 0);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4ecdc4;
+    outline: none;
+    color: rgb(0, 0, 0);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: #4ecdc4;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #45b7b0;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .row {
+        flex-direction: column;
+    }
+}
